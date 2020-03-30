@@ -8,19 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		05913F82242E0ECA000DFCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F81242E0ECA000DFCCF /* AppDelegate.swift */; };
-		05913F84242E0ECA000DFCCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F83242E0ECA000DFCCF /* ViewController.swift */; };
 		05913F86242E0ECC000DFCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05913F85242E0ECC000DFCCF /* Assets.xcassets */; };
 		05913F89242E0ECC000DFCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05913F87242E0ECC000DFCCF /* Main.storyboard */; };
+		05913F98242F4BC3000DFCCF /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F97242F4BC3000DFCCF /* StatusBarController.swift */; };
+		05913F9A242F4C05000DFCCF /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F99242F4C05000DFCCF /* EventMonitor.swift */; };
+		05913F9C242F4C27000DFCCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F9B242F4C27000DFCCF /* ContentView.swift */; };
+		05913F9E242F4C70000DFCCF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F9D242F4C70000DFCCF /* MainViewController.swift */; };
+		05A493A024309D2900333D09 /* ServiceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4939F24309D2900333D09 /* ServiceDetailViewModel.swift */; };
+		05A493A224309DF300333D09 /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493A124309DF300333D09 /* ServiceDetailView.swift */; };
+		05A493A52430A34000333D09 /* ServiceDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493A42430A34000333D09 /* ServiceDetailService.swift */; };
+		05A493A72430A51100333D09 /* ServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493A62430A51100333D09 /* ServiceStatus.swift */; };
+		05A493A92430A73700333D09 /* SpringBootStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493A82430A73700333D09 /* SpringBootStatus.swift */; };
+		05A493AC2430CEEA00333D09 /* ServiceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493AB2430CEEA00333D09 /* ServiceCollectionView.swift */; };
+		05A493AE2430CF1700333D09 /* ServiceCollectionManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493AD2430CF1700333D09 /* ServiceCollectionManagementView.swift */; };
+		05A493B02430F7BF00333D09 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493AF2430F7BF00333D09 /* DefaultsKeys.swift */; };
+		05A493B22430FAB500333D09 /* ServiceCollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493B12430FAB500333D09 /* ServiceCollectionService.swift */; };
+		05A493B42430FCE200333D09 /* CollectionServiceJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A493B32430FCE200333D09 /* CollectionServiceJSON.swift */; };
+		05F622FE2431A99F005A6818 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F622FD2431A99F005A6818 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05913F7E242E0ECA000DFCCF /* Spring Boot Health Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spring Boot Health Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05913F81242E0ECA000DFCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05913F83242E0ECA000DFCCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05913F85242E0ECC000DFCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05913F88242E0ECC000DFCCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05913F8A242E0ECC000DFCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05913F8B242E0ECC000DFCCF /* Spring_Boot_Health_Check.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spring_Boot_Health_Check.entitlements; sourceTree = "<group>"; };
+		05913F97242F4BC3000DFCCF /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		05913F99242F4C05000DFCCF /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		05913F9B242F4C27000DFCCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		05913F9D242F4C70000DFCCF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		05A4939F24309D2900333D09 /* ServiceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewModel.swift; sourceTree = "<group>"; };
+		05A493A124309DF300333D09 /* ServiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
+		05A493A42430A34000333D09 /* ServiceDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailService.swift; sourceTree = "<group>"; };
+		05A493A62430A51100333D09 /* ServiceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatus.swift; sourceTree = "<group>"; };
+		05A493A82430A73700333D09 /* SpringBootStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringBootStatus.swift; sourceTree = "<group>"; };
+		05A493AB2430CEEA00333D09 /* ServiceCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionView.swift; sourceTree = "<group>"; };
+		05A493AD2430CF1700333D09 /* ServiceCollectionManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionManagementView.swift; sourceTree = "<group>"; };
+		05A493AF2430F7BF00333D09 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		05A493B12430FAB500333D09 /* ServiceCollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollectionService.swift; sourceTree = "<group>"; };
+		05A493B32430FCE200333D09 /* CollectionServiceJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionServiceJSON.swift; sourceTree = "<group>"; };
+		05F622FD2431A99F005A6818 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +62,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		054B781A24321A8E00481EF5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		05913F75242E0ECA000DFCCF = {
 			isa = PBXGroup;
 			children = (
@@ -53,14 +88,69 @@
 		05913F80242E0ECA000DFCCF /* Spring Boot Health Check */ = {
 			isa = PBXGroup;
 			children = (
+				054B781A24321A8E00481EF5 /* Controllers */,
+				05A493AA2430AA4300333D09 /* View Models */,
+				05A493A32430A01D00333D09 /* Services */,
+				05A4939E24309D0B00333D09 /* Models */,
+				05913F96242F4BAA000DFCCF /* Views */,
+				05913F95242F4B98000DFCCF /* Helpers */,
 				05913F81242E0ECA000DFCCF /* AppDelegate.swift */,
-				05913F83242E0ECA000DFCCF /* ViewController.swift */,
 				05913F85242E0ECC000DFCCF /* Assets.xcassets */,
 				05913F87242E0ECC000DFCCF /* Main.storyboard */,
 				05913F8A242E0ECC000DFCCF /* Info.plist */,
 				05913F8B242E0ECC000DFCCF /* Spring_Boot_Health_Check.entitlements */,
+				05913F9D242F4C70000DFCCF /* MainViewController.swift */,
 			);
 			path = "Spring Boot Health Check";
+			sourceTree = "<group>";
+		};
+		05913F95242F4B98000DFCCF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				05913F97242F4BC3000DFCCF /* StatusBarController.swift */,
+				05913F99242F4C05000DFCCF /* EventMonitor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		05913F96242F4BAA000DFCCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05913F9B242F4C27000DFCCF /* ContentView.swift */,
+				05A493A124309DF300333D09 /* ServiceDetailView.swift */,
+				05A493AB2430CEEA00333D09 /* ServiceCollectionView.swift */,
+				05A493AD2430CF1700333D09 /* ServiceCollectionManagementView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05A4939E24309D0B00333D09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05A493A62430A51100333D09 /* ServiceStatus.swift */,
+				05A493A82430A73700333D09 /* SpringBootStatus.swift */,
+				05A493AF2430F7BF00333D09 /* DefaultsKeys.swift */,
+				05A493B32430FCE200333D09 /* CollectionServiceJSON.swift */,
+				05F622FD2431A99F005A6818 /* UserSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05A493A32430A01D00333D09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				05A493A42430A34000333D09 /* ServiceDetailService.swift */,
+				05A493B12430FAB500333D09 /* ServiceCollectionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		05A493AA2430AA4300333D09 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				05A4939F24309D2900333D09 /* ServiceDetailViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,6 +169,8 @@
 			dependencies = (
 			);
 			name = "Spring Boot Health Check";
+			packageProductDependencies = (
+			);
 			productName = "Spring Boot Health Check";
 			productReference = 05913F7E242E0ECA000DFCCF /* Spring Boot Health Check.app */;
 			productType = "com.apple.product-type.application";
@@ -107,6 +199,8 @@
 				Base,
 			);
 			mainGroup = 05913F75242E0ECA000DFCCF;
+			packageReferences = (
+			);
 			productRefGroup = 05913F7F242E0ECA000DFCCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,8 +227,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05913F84242E0ECA000DFCCF /* ViewController.swift in Sources */,
+				05913F9A242F4C05000DFCCF /* EventMonitor.swift in Sources */,
 				05913F82242E0ECA000DFCCF /* AppDelegate.swift in Sources */,
+				05A493A92430A73700333D09 /* SpringBootStatus.swift in Sources */,
+				05A493B42430FCE200333D09 /* CollectionServiceJSON.swift in Sources */,
+				05A493AC2430CEEA00333D09 /* ServiceCollectionView.swift in Sources */,
+				05A493A52430A34000333D09 /* ServiceDetailService.swift in Sources */,
+				05A493AE2430CF1700333D09 /* ServiceCollectionManagementView.swift in Sources */,
+				05A493A72430A51100333D09 /* ServiceStatus.swift in Sources */,
+				05A493B02430F7BF00333D09 /* DefaultsKeys.swift in Sources */,
+				05A493A024309D2900333D09 /* ServiceDetailViewModel.swift in Sources */,
+				05913F9C242F4C27000DFCCF /* ContentView.swift in Sources */,
+				05A493A224309DF300333D09 /* ServiceDetailView.swift in Sources */,
+				05A493B22430FAB500333D09 /* ServiceCollectionService.swift in Sources */,
+				05F622FE2431A99F005A6818 /* UserSettings.swift in Sources */,
+				05913F98242F4BC3000DFCCF /* StatusBarController.swift in Sources */,
+				05913F9E242F4C70000DFCCF /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +313,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -259,6 +367,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -279,6 +388,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "gangnobi.Spring-Boot-Health-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -299,6 +409,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "gangnobi.Spring-Boot-Health-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

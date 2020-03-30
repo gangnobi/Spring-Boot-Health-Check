@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class UserSettings: ObservableObject {
+    @Published var onRefresh = true
+}

@@ -6,11 +6,42 @@
 //  Copyright © 2563 Waytis Laoniyomthai. All rights reserved.
 //
 
+import AppKit
 import SwiftUI
 
 struct ContentView: View {
+    @State var showServiceCollectionView: Bool = true
+    @State var currentCollection: [ServiceDetailViewModel] = []
+    @State var currentCollectionName: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if self.showServiceCollectionView {
+                ServiceCollectionManagementView(
+                    currentCollection: self.$currentCollection, currentCollectionName: self.$currentCollectionName, showServiceCollection: self.$showServiceCollectionView
+                )
+            } else {
+                ServiceCollectionView(
+                    showServiceCollection: self.$showServiceCollectionView,
+                    modelData: self.currentCollection, modelDataName: self.currentCollectionName
+                )
+            }
+
+            HStack(spacing: 0) {
+                Spacer()
+                //                Button(action: {}) {
+                //                    Image("settings").foregroundColor(Color.primary.opacity(0.6))
+                //                }
+                //                .padding(7)
+                //                .buttonStyle(PlainButtonStyle())
+                Button(action: {
+                    NSApplication.shared.terminate(self)
+                                }) {
+                    Image("turn-off").foregroundColor(Color.primary.opacity(0.6))
+                }
+                .padding(7)
+                .buttonStyle(PlainButtonStyle())
+            }.background(Color.primary.colorInvert().opacity(0.2))
+        }
     }
 }
 

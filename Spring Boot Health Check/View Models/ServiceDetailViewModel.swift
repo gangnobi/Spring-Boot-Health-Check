@@ -8,18 +8,41 @@
 
 import Foundation
 
-struct ServiceDetail: Identifiable {
+struct ServiceLinkItemViewModel: Identifiable {
+    var id = UUID()
+    var name: String
+    var url: String
+}
+
+class ServiceDetailViewModel: Identifiable, ObservableObject {
+    private let serviceDetailService = ServiceDetailService()
+
     var id = UUID()
     var serviceName: String
     var serviceEndpoint: String
-    var status: ServiceStatus
-    var updateDateTime: Date?
-    var logUrl: String = ""
-    
-    init(serviceName:String,serviceEndpoint:String,logUrl:String) {
+    @Published var status: ServiceStatus?
+    var links: [ServiceLinkItemViewModel]
+
+    init(serviceName: String, serviceEndpoint: String, links: [ServiceLinkItem]) {
         self.serviceName = serviceName
         self.serviceEndpoint = serviceEndpoint
-        self.logUrl = logUrl
-        self.status = ServiceDetailService.getServiceStatus(ServiceDetailService)
+        
+        self.links = links.map { item in
+            ServiceLinkItemViewModel(name: item.name, url: item.url)
+        }
+        
+        serviceDetailService.getServiceStatus(serviceEndpoint: serviceEndpoint) { status in
+            DispatchQueue.main.async { self.status = status
+            }
+        }
+    }
+
+    func fetchStatus(completion: @escaping (Bool) -> ()) {
+        serviceDetailService.getServiceStatus(serviceEndpoint: serviceEndpoint) { status in
+            DispatchQueue.main.async {
+                self.status = status
+                completion(true)
+            }
+        }
     }
 }

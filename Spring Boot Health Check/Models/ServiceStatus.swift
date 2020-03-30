@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct ServiceStatus {
+    var isUp: Bool
+    var httpStatusCode: UInt
+    var updatedDateTime:Date = Date()
+}

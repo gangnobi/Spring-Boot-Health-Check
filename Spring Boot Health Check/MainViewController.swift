@@ -6,4 +6,9 @@
 //  Copyright © 2563 Waytis Laoniyomthai. All rights reserved.
 //
 
-import Foundation
+import AppKit
+
+class MainViewController: NSViewController
+{
+    
+}

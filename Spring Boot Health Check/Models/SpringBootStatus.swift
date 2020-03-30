@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct SpringBootStatus:Decodable {
+   var status:String
+}
