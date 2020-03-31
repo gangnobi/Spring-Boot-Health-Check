@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0587115E2433834200BE468F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587115D2433834200BE468F /* EventMonitor.swift */; };
 		05913F82242E0ECA000DFCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F81242E0ECA000DFCCF /* AppDelegate.swift */; };
 		05913F86242E0ECC000DFCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05913F85242E0ECC000DFCCF /* Assets.xcassets */; };
 		05913F89242E0ECC000DFCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05913F87242E0ECC000DFCCF /* Main.storyboard */; };
 		05913F98242F4BC3000DFCCF /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F97242F4BC3000DFCCF /* StatusBarController.swift */; };
-		05913F9A242F4C05000DFCCF /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F99242F4C05000DFCCF /* EventMonitor.swift */; };
 		05913F9C242F4C27000DFCCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F9B242F4C27000DFCCF /* ContentView.swift */; };
 		05913F9E242F4C70000DFCCF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F9D242F4C70000DFCCF /* MainViewController.swift */; };
 		05A493A024309D2900333D09 /* ServiceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A4939F24309D2900333D09 /* ServiceDetailViewModel.swift */; };
@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0587115D2433834200BE468F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		05913F7E242E0ECA000DFCCF /* Spring Boot Health Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spring Boot Health Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05913F81242E0ECA000DFCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05913F85242E0ECC000DFCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		05913F8A242E0ECC000DFCCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05913F8B242E0ECC000DFCCF /* Spring_Boot_Health_Check.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spring_Boot_Health_Check.entitlements; sourceTree = "<group>"; };
 		05913F97242F4BC3000DFCCF /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
-		05913F99242F4C05000DFCCF /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		05913F9B242F4C27000DFCCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		05913F9D242F4C70000DFCCF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		05A4939F24309D2900333D09 /* ServiceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewModel.swift; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		05913F95242F4B98000DFCCF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0587115D2433834200BE468F /* EventMonitor.swift */,
 				05913F97242F4BC3000DFCCF /* StatusBarController.swift */,
-				05913F99242F4C05000DFCCF /* EventMonitor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,7 +227,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05913F9A242F4C05000DFCCF /* EventMonitor.swift in Sources */,
 				05913F82242E0ECA000DFCCF /* AppDelegate.swift in Sources */,
 				05A493A92430A73700333D09 /* SpringBootStatus.swift in Sources */,
 				05A493B42430FCE200333D09 /* CollectionServiceJSON.swift in Sources */,
@@ -235,6 +234,7 @@
 				05A493A52430A34000333D09 /* ServiceDetailService.swift in Sources */,
 				05A493AE2430CF1700333D09 /* ServiceCollectionManagementView.swift in Sources */,
 				05A493A72430A51100333D09 /* ServiceStatus.swift in Sources */,
+				0587115E2433834200BE468F /* EventMonitor.swift in Sources */,
 				05A493B02430F7BF00333D09 /* DefaultsKeys.swift in Sources */,
 				05A493A024309D2900333D09 /* ServiceDetailViewModel.swift in Sources */,
 				05913F9C242F4C27000DFCCF /* ContentView.swift in Sources */,

@@ -123,7 +123,7 @@ struct ServiceCollectionManagementView: View {
                     self.fetchCollections()
                 }
             }
-            NSApp.setActivationPolicy(.prohibited)
+            NSApp.setActivationPolicy(.accessory)
         }
     }
 }

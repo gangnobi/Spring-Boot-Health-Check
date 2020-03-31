@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ServiceCollectionView: View {
     @EnvironmentObject var settings: UserSettings
-    
+
     @Binding var showServiceCollection: Bool
     @State var onShow: Bool = false
 
@@ -19,12 +19,14 @@ struct ServiceCollectionView: View {
         formatter.dateFormat = "HH:mm, d MMM y"
         return formatter
     }()
-    
+
     @State var modelData: [ServiceDetailViewModel]
     @State var modelDataName: String
     @State private var searchText: String = ""
     @State private var isLoading = false
     @State private var showRefreshAllLoading = false
+    @State private var onHover: [String: Bool] = [:]
+    @State private var selectedFilter: String = "allServiceBtn"
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -79,36 +81,55 @@ struct ServiceCollectionView: View {
                 .padding(.bottom, 10)
             ScrollView(.vertical) {
                 VStack(spacing: 0) {
-                    if self.searchText.isEmpty && self.settings.onRefresh && !self.modelData.isEmpty {
-                    RoundedRectangle(cornerRadius: 8.0)
-                    .frame(height: 70)
-                    .opacity(0.3)
-                    .colorInvert()
-                    .overlay(
+                    if self.settings.onRefresh && !self.modelData.isEmpty {
                         HStack(spacing: 0) {
-                            VStack(alignment:.center){
-                                Text("\(self.modelData.count)").font(.body)
-                                Text("Service").font(.caption)
+                            Button(action: { self.onSelectFilter(name: "allServiceBtn") }) {
+                                VStack(alignment: .center) {
+                                    Text("\(self.countService(isUp: nil))").font(.headline)
+                                    Text("Service").font(.caption)
+                                }
+                                .frame(width: 308 / 3, height: 70)
+                                .background(self.getColorHover(name: "allServiceBtn"))
+                                .animation(.spring())
+                                .onHover { val in
+                                    self.onHover["allServiceBtn"] = val
+                                }
                             }
-                            .frame(width: 360.0/3-(2/3))
-                            Divider()
-                            VStack(alignment:.center){
-                                Text("\(self.countService(isUp: true))").font(.body)
-                                Text("Up").font(.caption)
+                            .buttonStyle(PlainButtonStyle())
+
+                            Button(action: { self.onSelectFilter(name: "upServiceBtn") }) {
+                                VStack(alignment: .center) {
+                                    Text(self.isLoading ? "..." : "\(self.countService(isUp: true))").font(.headline)
+                                    Text("Up").font(.caption)
+                                }
+                                .frame(width: 308 / 3, height: 70)
+                                .background(self.getColorHover(name: "upServiceBtn"))
+                                .animation(.spring())
+                                .onHover { val in
+                                    self.onHover["upServiceBtn"] = val
+                                }
+                                .padding(.horizontal, 10)
                             }
-                            .frame(width: 360.0/3-(2/3)-15)
-                            Divider()
-                            VStack(alignment:.center){
-                                Text("\(self.countService(isUp: false))").font(.body)
-                                Text("Down").font(.caption)
+                            .buttonStyle(PlainButtonStyle())
+
+                            Button(action: { self.onSelectFilter(name: "downServiceBtn") }) {
+                                VStack(alignment: .center) {
+                                    Text(self.isLoading ? "..." : "\(self.countService(isUp: false))").font(.headline)
+                                    Text("Down").font(.caption)
+                                }
+                                .frame(width: 308 / 3, height: 70)
+                                .background(self.getColorHover(name: "downServiceBtn"))
+                                .animation(.spring())
+                                .onHover { val in
+                                    self.onHover["downServiceBtn"] = val
+                                }
                             }
-                            .frame(width: 360.0/3-(2/3))
-                    })
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)}
-                    ForEach(self.modelData.filter { item in
-                        self.searchText.isEmpty ? true : item.serviceName.lowercased().contains(self.searchText.lowercased())
-                    }) { item in
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal)
+                    }
+                    ForEach(self.filterList()) { item in
                         ServiceDetailView(serviceDetailItem: item)
                     }
                     .padding(.vertical, 5)
@@ -119,7 +140,7 @@ struct ServiceCollectionView: View {
         }
         .padding(0)
         .frame(width: 360.0, height: 360.0, alignment: .top)
-        .onAppear(){self.onRefreshAll()}
+        .onAppear { self.onRefreshAll() }
     }
 
     func toggleIsLoading(val: Bool) {
@@ -143,16 +164,72 @@ struct ServiceCollectionView: View {
             self.settings.onRefresh = true
         }
     }
-    
-    func countService(isUp:Bool) -> Int {
-        self.modelData.filter { (item) -> Bool in
-            (item.status?.isUp == isUp )
+
+    func countService(isUp: Bool?) -> Int {
+        let searchFiltered = self.modelData.filter { item in
+            self.searchText.isEmpty ? true : item.serviceName.lowercased().contains(self.searchText.lowercased())
+        }
+        if isUp == nil {
+            return searchFiltered.count
+        }
+        return searchFiltered.filter { (item) -> Bool in
+            item.status?.isUp == isUp
         }.count
+    }
+
+    func getColorHover(name: String) -> some View {
+        if self.onHover[name, default: false] && self.selectedFilter == name {
+            return Color.secondary.colorInvert().opacity(0.7).cornerRadius(8).overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.gray, lineWidth: 2)
+            )
+        } else if self.onHover[name, default: false] {
+            return Color.secondary.colorInvert().opacity(0.3).cornerRadius(8).overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.gray, lineWidth: 2)
+            )
+        } else if self.selectedFilter == name {
+            return Color.secondary.colorInvert().opacity(0.7).cornerRadius(8).overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.secondary, lineWidth: 0)
+            )
+        } else {
+            return Color.secondary.colorInvert().opacity(0.3).cornerRadius(8).overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.secondary, lineWidth: 0)
+            )
+        }
+    }
+
+    func onSelectFilter(name: String) {
+        self.selectedFilter = name
+    }
+
+    func filterList() -> [ServiceDetailViewModel] {
+        let searchFiltered = self.modelData.filter { item in
+            self.searchText.isEmpty ? true : item.serviceName.lowercased().contains(self.searchText.lowercased())
+        }
+        return searchFiltered.filter { item in
+            switch self.selectedFilter {
+                case "allServiceBtn":
+                    return true
+                case "upServiceBtn":
+                    return item.status?.isUp == true
+                case "downServiceBtn":
+                    return item.status?.isUp == false
+                default:
+                    return false
+            }
+        }
     }
 }
 
 struct ServiceCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ServiceCollectionView(showServiceCollection: .constant(false),modelData:[], modelDataName: "")
+        ServiceCollectionView(
+            showServiceCollection: .constant(false),
+            modelData: [ServiceDetailViewModel(serviceName: "Test Service", serviceEndpoint: "", links: [])],
+            modelDataName: ""
+        ).environmentObject(UserSettings())
     }
 }

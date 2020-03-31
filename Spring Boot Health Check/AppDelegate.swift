@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBar: StatusBarController?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        NSApp.setActivationPolicy(.prohibited)
+        NSApp.setActivationPolicy(.accessory)
         
         // Create the SwiftUI view that provides the contents
         let contentView = ContentView()
@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         popover.contentViewController = MainViewController()
         popover.contentSize = NSSize(width: 360, height: 360)
+        popover.behavior = .transient
         popover.contentViewController?.view = NSHostingView(rootView: contentView.environmentObject(settings))
 
         // Create the Status Bar Item with the Popover

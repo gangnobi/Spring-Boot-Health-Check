@@ -18,16 +18,16 @@ class StatusBarController
     
     init(_ popover: NSPopover)
     {
-        statusBar = NSStatusBar()
-        statusItem = statusBar.statusItem(withLength: 24.0)
+        statusBar = NSStatusBar.system
+        statusItem = statusBar.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         
         statusBarButton = statusItem.button!
         self.popover = popover
-        
+            
         statusBarButton.image = #imageLiteral(resourceName: "StatusBarIcon")
         statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
         statusBarButton.image?.isTemplate = true
-//        statusBarButton.contentTintColor = NSColor.green
+        statusBarButton.contentTintColor = NSColor.systemGreen
         statusBarButton.frame = NSRect(x: 0, y: -2, width: statusBarButton.frame.width, height: statusBarButton.frame.height)
         
         statusBarButton.action = #selector(togglePopover(sender:))
@@ -51,6 +51,8 @@ class StatusBarController
     func showPopover(_ sender: AnyObject)
     {
         popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
+        popover.contentViewController?.view.window?.becomeKey()
+
         eventMonitor?.start()
     }
     
