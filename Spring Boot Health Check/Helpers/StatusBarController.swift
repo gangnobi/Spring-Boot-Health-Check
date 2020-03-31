@@ -27,8 +27,7 @@ class StatusBarController
         statusBarButton.image = #imageLiteral(resourceName: "StatusBarIcon")
         statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
         statusBarButton.image?.isTemplate = true
-        statusBarButton.contentTintColor = NSColor.systemGreen
-        statusBarButton.frame = NSRect(x: 0, y: -2, width: statusBarButton.frame.width, height: statusBarButton.frame.height)
+//        statusBarButton.contentTintColor = NSColor.systemGreen
         
         statusBarButton.action = #selector(togglePopover(sender:))
         statusBarButton.target = self
