@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ServiceCollectionManagementView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var currentCollection: [ServiceDetailViewModel]
     @Binding var currentCollectionName: String
     @Binding var showServiceCollection: Bool
@@ -77,6 +78,7 @@ struct ServiceCollectionManagementView: View {
                                         }.buttonStyle(PlainButtonStyle())
                                     }
                                 )
+                                .overlay(self.getBorderTheme())
                                 .padding(.vertical, 5)
                                 .padding(.horizontal)
                         }.buttonStyle(PlainButtonStyle())
@@ -125,6 +127,11 @@ struct ServiceCollectionManagementView: View {
             }
             NSApp.setActivationPolicy(.accessory)
         }
+    }
+    
+    func getBorderTheme() -> some View {
+        return RoundedRectangle(cornerRadius: 8)
+        .stroke(Color.gray.opacity(0.3), lineWidth: self.colorScheme == ColorScheme.light ? 1 : 0)
     }
 }
 

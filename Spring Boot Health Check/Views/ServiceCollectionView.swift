@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ServiceCollectionView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var settings: UserSettings
 
     @Binding var showServiceCollection: Bool
@@ -89,6 +90,7 @@ struct ServiceCollectionView: View {
                                     Text("Service").font(.caption)
                                 }
                                 .frame(width: 308 / 3, height: 70)
+                                .overlay(self.getBorderTheme())
                                 .background(self.getColorHover(name: "allServiceBtn"))
                                 .animation(.spring())
                                 .onHover { val in
@@ -103,6 +105,7 @@ struct ServiceCollectionView: View {
                                     Text("Up").font(.caption)
                                 }
                                 .frame(width: 308 / 3, height: 70)
+                                .overlay(self.getBorderTheme())
                                 .background(self.getColorHover(name: "upServiceBtn"))
                                 .animation(.spring())
                                 .onHover { val in
@@ -118,6 +121,7 @@ struct ServiceCollectionView: View {
                                     Text("Down").font(.caption)
                                 }
                                 .frame(width: 308 / 3, height: 70)
+                                .overlay(self.getBorderTheme())
                                 .background(self.getColorHover(name: "downServiceBtn"))
                                 .animation(.spring())
                                 .onHover { val in
@@ -221,6 +225,11 @@ struct ServiceCollectionView: View {
                     return false
             }
         }
+    }
+    
+    func getBorderTheme() -> some View {
+        return RoundedRectangle(cornerRadius: 8)
+        .stroke(Color.gray.opacity(0.3), lineWidth: self.colorScheme == ColorScheme.light ? 1 : 0)
     }
 }
 

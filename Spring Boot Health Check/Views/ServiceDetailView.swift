@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct ServiceDetailView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var settings: UserSettings
-    
+
     static let dateFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss, d MMM y"
@@ -25,6 +26,10 @@ struct ServiceDetailView: View {
             .frame(height: 70)
             .opacity(0.3)
             .colorInvert()
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.gray.opacity(0.3), lineWidth: self.colorScheme == ColorScheme.light ? 1 : 0)
+            )
             .overlay(
                 HStack(spacing: 1) {
                     VStack(alignment: .leading, spacing: 5) {
@@ -50,25 +55,24 @@ struct ServiceDetailView: View {
                                     .cornerRadius(5)
                                     .frame(width: 20, height: 20)
                             }.buttonStyle(PlainButtonStyle())
-                            
+
                             ForEach(self.serviceDetailItem.links) { item in
                                 Button(action: {
                                     if let url = URL(string: item.url) {
-                                            NSWorkspace.shared.open(url)
-                                        }
+                                        NSWorkspace.shared.open(url)
+                                    }
                                 }) {
-                                        HStack {
-                                            Text(item.name).font(.caption)
-                                        }
-                                        .padding(.horizontal, 6)
-                                        .padding(.vertical, 2)
-                                        .foregroundColor(Color.primary)
-                                        .background(Color.primary.colorInvert().opacity(0.3))
-                                        .cornerRadius(5)
+                                    HStack {
+                                        Text(item.name).font(.caption)
+                                    }
+                                    .padding(.horizontal, 6)
+                                    .padding(.vertical, 2)
+                                    .foregroundColor(Color.primary)
+                                    .background(Color.primary.colorInvert().opacity(0.3))
+                                    .cornerRadius(5)
 
-                                    }.buttonStyle(PlainButtonStyle())
+                                }.buttonStyle(PlainButtonStyle())
                             }
-                            
                         }
                     }
                     Spacer()
@@ -84,7 +88,7 @@ struct ServiceDetailView: View {
                     }
                 }
                 .padding()
-        )
+            )
     }
 
     func getStatusText() -> Text {
