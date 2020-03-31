@@ -13,7 +13,7 @@ class StatusBarController
     private var statusBar: NSStatusBar
     private var statusItem: NSStatusItem
     private var popover: NSPopover
-    private var statusBarButton: NSStatusBarButton
+    public var statusBarButton: NSStatusBarButton
     private var eventMonitor: EventMonitor?
     
     init(_ popover: NSPopover)

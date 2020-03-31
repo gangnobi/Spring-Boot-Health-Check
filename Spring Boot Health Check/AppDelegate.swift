@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the Status Bar Item with the Popover
         statusBar = StatusBarController(popover)
+        settings.statusBarButton = statusBar?.statusBarButton
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

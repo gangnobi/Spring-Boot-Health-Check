@@ -170,6 +170,7 @@ struct ServiceCollectionView: View {
     }
 
     func countService(isUp: Bool?) -> Int {
+        self.setIconStatusBarColor()
         let searchFiltered = self.modelData.filter { item in
             self.searchText.isEmpty ? true : item.serviceName.lowercased().contains(self.searchText.lowercased())
         }
@@ -230,6 +231,14 @@ struct ServiceCollectionView: View {
     func getBorderTheme() -> some View {
         return RoundedRectangle(cornerRadius: 8)
         .stroke(Color.gray.opacity(0.3), lineWidth: self.colorScheme == ColorScheme.light ? 1 : 0)
+    }
+    
+    func setIconStatusBarColor() {
+        if let statusBarButton =   self.settings.statusBarButton {
+            statusBarButton.contentTintColor = self.modelData.filter { item in
+                item.status?.isUp == false
+            }.count > 0 ?  NSColor.systemRed : NSColor.systemGreen
+        }
     }
 }
 

@@ -8,6 +8,10 @@
 
 import Foundation
 
+import Cocoa
+import SwiftUI
+
 class UserSettings: ObservableObject {
     @Published var onRefresh = true
+    var statusBarButton: NSStatusBarButton?
 }
