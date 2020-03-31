@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0587115D2433834200BE468F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		058711792433B60F00BE468F /* Spring Boot Health Check copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Spring Boot Health Check copy-Info.plist"; path = "/Users/waytis.lao/Desktop/Spring Boot Health Check/Spring Boot Health Check copy-Info.plist"; sourceTree = "<absolute>"; };
 		05913F7E242E0ECA000DFCCF /* Spring Boot Health Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spring Boot Health Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05913F81242E0ECA000DFCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05913F85242E0ECC000DFCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 			children = (
 				05913F80242E0ECA000DFCCF /* Spring Boot Health Check */,
 				05913F7F242E0ECA000DFCCF /* Products */,
+				058711792433B60F00BE468F /* Spring Boot Health Check copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -381,6 +383,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Spring Boot Health Check/Spring_Boot_Health_Check.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3B6GGK6URC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Spring Boot Health Check/Info.plist";
@@ -402,6 +405,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Spring Boot Health Check/Spring_Boot_Health_Check.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3B6GGK6URC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Spring Boot Health Check/Info.plist";
