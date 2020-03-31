@@ -8,6 +8,7 @@
 
 import AppKit
 import SwiftUI
+import LaunchAtLogin
 
 struct ContentView: View {
     @State var showServiceCollectionView: Bool = true
@@ -27,6 +28,9 @@ struct ContentView: View {
             }
 
             HStack(spacing: 0) {
+                Toggle(isOn: LaunchAtLogin.isEnabled) {
+                    Text("Show welcome message")
+                }
                 Spacer()
                 //                Button(action: {}) {
                 //                    Image("settings").foregroundColor(Color.primary.opacity(0.6))
