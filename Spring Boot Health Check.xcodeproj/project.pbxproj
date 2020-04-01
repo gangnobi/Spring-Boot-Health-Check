@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0587115E2433834200BE468F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587115D2433834200BE468F /* EventMonitor.swift */; };
+		058A8E2A2433BDF200436D03 /* LaunchAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058A8E292433BDF200436D03 /* LaunchAtLogin.framework */; };
+		058A8E2B2433BDF200436D03 /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 058A8E292433BDF200436D03 /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05913F82242E0ECA000DFCCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05913F81242E0ECA000DFCCF /* AppDelegate.swift */; };
 		05913F86242E0ECC000DFCCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05913F85242E0ECC000DFCCF /* Assets.xcassets */; };
 		05913F89242E0ECC000DFCCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05913F87242E0ECC000DFCCF /* Main.storyboard */; };
@@ -27,9 +29,23 @@
 		05F622FE2431A99F005A6818 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F622FD2431A99F005A6818 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		058A8E2C2433BDF200436D03 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				058A8E2B2433BDF200436D03 /* LaunchAtLogin.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0587115D2433834200BE468F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		058711792433B60F00BE468F /* Spring Boot Health Check copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Spring Boot Health Check copy-Info.plist"; path = "/Users/waytis.lao/Desktop/Spring Boot Health Check/Spring Boot Health Check copy-Info.plist"; sourceTree = "<absolute>"; };
+		058A8E292433BDF200436D03 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		05913F7E242E0ECA000DFCCF /* Spring Boot Health Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spring Boot Health Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05913F81242E0ECA000DFCCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05913F85242E0ECC000DFCCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058A8E2A2433BDF200436D03 /* LaunchAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +87,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		058A8E282433BDF100436D03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				058A8E292433BDF200436D03 /* LaunchAtLogin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		05913F75242E0ECA000DFCCF = {
 			isa = PBXGroup;
 			children = (
 				05913F80242E0ECA000DFCCF /* Spring Boot Health Check */,
 				05913F7F242E0ECA000DFCCF /* Products */,
-				058711792433B60F00BE468F /* Spring Boot Health Check copy-Info.plist */,
+				058A8E282433BDF100436D03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +190,8 @@
 				05913F7A242E0ECA000DFCCF /* Sources */,
 				05913F7B242E0ECA000DFCCF /* Frameworks */,
 				05913F7C242E0ECA000DFCCF /* Resources */,
+				058A8E272433BD2700436D03 /* ShellScript */,
+				058A8E2C2433BDF200436D03 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,6 +250,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		058A8E272433BD2700436D03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05913F7A242E0ECA000DFCCF /* Sources */ = {
@@ -383,14 +430,19 @@
 				CODE_SIGN_ENTITLEMENTS = "Spring Boot Health Check/Spring_Boot_Health_Check.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3B6GGK6URC;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Spring Boot Health Check/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "gangnobi.Spring-Boot-Health-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,14 +457,19 @@
 				CODE_SIGN_ENTITLEMENTS = "Spring Boot Health Check/Spring_Boot_Health_Check.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3B6GGK6URC;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Spring Boot Health Check/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "gangnobi.Spring-Boot-Health-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";

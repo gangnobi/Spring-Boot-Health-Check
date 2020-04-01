@@ -7,13 +7,23 @@
 //
 
 import AppKit
-import SwiftUI
 import LaunchAtLogin
+import SwiftUI
+
+struct LaunchAtLoginFlag {
+    var val: Bool = true {
+        didSet {
+            LaunchAtLogin.isEnabled = val
+        }
+    }
+}
 
 struct ContentView: View {
     @State var showServiceCollectionView: Bool = true
     @State var currentCollection: [ServiceDetailViewModel] = []
     @State var currentCollectionName: String = ""
+    @State var isLaunchAtLoginFlag = LaunchAtLoginFlag()
+
     var body: some View {
         VStack {
             if self.showServiceCollectionView {
@@ -28,9 +38,10 @@ struct ContentView: View {
             }
 
             HStack(spacing: 0) {
-                Toggle(isOn: LaunchAtLogin.isEnabled) {
-                    Text("Show welcome message")
+                Toggle(isOn: self.$isLaunchAtLoginFlag.val) {
+                    Text("Launch at login")
                 }
+                .padding(.leading, 10)
                 Spacer()
                 //                Button(action: {}) {
                 //                    Image("settings").foregroundColor(Color.primary.opacity(0.6))
@@ -45,6 +56,8 @@ struct ContentView: View {
                 .padding(7)
                 .buttonStyle(PlainButtonStyle())
             }.background(Color.primary.colorInvert().opacity(0.2))
+        }.onAppear {
+            self.isLaunchAtLoginFlag.val = LaunchAtLogin.isEnabled
         }
     }
 }
