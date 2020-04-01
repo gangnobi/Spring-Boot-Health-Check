@@ -38,10 +38,10 @@ struct ContentView: View {
             }
 
             HStack(spacing: 0) {
-                Toggle(isOn: self.$isLaunchAtLoginFlag.val) {
-                    Text("Launch at login")
-                }
-                .padding(.leading, 10)
+//                Toggle(isOn: self.$isLaunchAtLoginFlag.val) {
+//                    Text("Launch at login")
+//                }
+//                .padding(.leading, 10)
                 Spacer()
                 //                Button(action: {}) {
                 //                    Image("settings").foregroundColor(Color.primary.opacity(0.6))
@@ -55,7 +55,9 @@ struct ContentView: View {
                 }
                 .padding(7)
                 .buttonStyle(PlainButtonStyle())
-            }.background(Color.primary.colorInvert().opacity(0.2))
+            }
+            .frame(height: 20)
+            .background(Color.primary.colorInvert().opacity(0.2))
         }.onAppear {
             self.isLaunchAtLoginFlag.val = LaunchAtLogin.isEnabled
         }

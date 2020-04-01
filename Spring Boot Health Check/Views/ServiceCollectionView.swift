@@ -196,7 +196,7 @@ struct ServiceCollectionView: View {
         } else if self.selectedFilter == name {
             return Color.secondary.colorInvert().opacity(0.7).cornerRadius(8).overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.secondary, lineWidth: 0)
+                    .stroke(Color.secondary, lineWidth: self.colorScheme == ColorScheme.light ? 1 : 0)
             )
         } else {
             return Color.secondary.colorInvert().opacity(0.3).cornerRadius(8).overlay(
